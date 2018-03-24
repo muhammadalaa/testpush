@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "907026265577",
+    "firebase_url": "https://testpush-9b13c.firebaseio.com",
+    "project_id": "testpush-9b13c",
+    "storage_bucket": "testpush-9b13c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907026265577:android:33cad3bd1ca895c3",
+        "android_client_info": {
+          "package_name": "com.alaa.testpush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907026265577-mi3301s9dsv8bjkt07qahhr5b0fhamet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDty5y0rHlNBOq6LtOqJ-_Fbfh9q2w4log"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
