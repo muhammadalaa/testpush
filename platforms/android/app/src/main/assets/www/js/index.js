@@ -37,33 +37,40 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+		
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
 		
-		FCMPlugin.getToken(function(token) {
-    //this is the fcm token which can be used
-    //to send notification to specific device 
-    console.log(token);
-    //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
-    //Here you define your application behaviour based on the notification data.
-    FCMPlugin.onNotification(function(data) {
-        console.log(data);
-        //data.wasTapped == true means in Background :  Notification was received on device tray and tapped by the user.
-        //data.wasTapped == false means in foreground :  Notification was received in foreground. Maybe the user needs to be notified.
-        // if (data.wasTapped) {
-        //     //Notification was received on device tray and tapped by the user.
-        //     alert(JSON.stringify(data));
-        // } else {
-        //     //Notification was received in foreground. Maybe the user needs to be notified.
-        //     alert(JSON.stringify(data));
-        // }
-    });
-});
+        console.log('Received Event: ' + id);
+	
+
     }
 };
+
+//FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
+//Note that this callback will be fired everytime a new token is generated, including the first time.
+FCMPlugin.onTokenRefresh(function(token){
+    document.getElementById('tokentxt').value = 'onTokenRefresh:'+token;
+});
+
+//FCMPlugin.getToken( successCallback(token), errorCallback(err) );
+//Keep in mind the function will return null if the token has not been established yet.
+FCMPlugin.getToken(function(token){
+    document.getElementById('tokentxt').value = 'getToken:'+token;
+});
+
+//FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
+//Here you define your application behaviour based on the notification data.
+FCMPlugin.onNotification(function(data){
+    if(data.wasTapped){
+      //Notification was received on device tray and tapped by the user.
+      alert( JSON.stringify(data) );
+    }else{
+      //Notification was received in foreground. Maybe the user needs to be notified.
+      alert( JSON.stringify(data) );
+    }
+});
