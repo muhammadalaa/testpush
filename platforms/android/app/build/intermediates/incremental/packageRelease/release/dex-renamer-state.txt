@@ -1,0 +1,4 @@
+#Wed Apr 18 11:37:33 AST 2018
+base.0=D\:\\pushSample\\testpush\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+renamed.0=classes.dex
+file.0=D\:\\pushSample\\testpush\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex

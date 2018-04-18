@@ -47,9 +47,17 @@ var app = {
 		
         console.log('Received Event: ' + id);
 	
-
-    }
-};
+//FCMPlugin.getToken( successCallback(token), errorCallback(err) );
+//Keep in mind the function will return null if the token has not been established yet.
+FCMPlugin.getToken(
+  function(token){
+	  document.getElementById('tokentxt').value = 'getToken:'+token;
+    alert(token);
+  },
+  function(err){
+    console.log('error retrieving token: ' + err);
+  }
+);
 
 //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
 //Note that this callback will be fired everytime a new token is generated, including the first time.
@@ -57,15 +65,10 @@ FCMPlugin.onTokenRefresh(function(token){
     document.getElementById('tokentxt').value = 'onTokenRefresh:'+token;
 });
 
-//FCMPlugin.getToken( successCallback(token), errorCallback(err) );
-//Keep in mind the function will return null if the token has not been established yet.
-FCMPlugin.getToken(function(token){
-    document.getElementById('tokentxt').value = 'getToken:'+token;
-});
-
 //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
 //Here you define your application behaviour based on the notification data.
-FCMPlugin.onNotification(function(data){
+FCMPlugin.onNotification(
+  function(data){
     if(data.wasTapped){
       //Notification was received on device tray and tapped by the user.
       alert( JSON.stringify(data) );
@@ -73,4 +76,13 @@ FCMPlugin.onNotification(function(data){
       //Notification was received in foreground. Maybe the user needs to be notified.
       alert( JSON.stringify(data) );
     }
-});
+  },
+  function(msg){
+    console.log('onNotification callback successfully registered: ' + msg);
+  },
+  function(err){
+    console.log('Error registering onNotification callback: ' + err);
+  }
+);
+    }
+};

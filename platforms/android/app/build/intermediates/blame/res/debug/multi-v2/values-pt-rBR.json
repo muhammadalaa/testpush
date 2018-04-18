@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\pushSample\\testpush\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Muhammad\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-15.0.0.aar\\f643b88b8259b158962eefecea39dff1\\res\\values-pt-rBR\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "209",
+                        "endColumns": "102",
+                        "endOffsets": "311"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "309",
+                        "endColumns": "106",
+                        "endOffsets": "411"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Muhammad\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.0.aar\\dd90b2121d7806fe14c1b1ea2aa1c668\\res\\values-pt-rBR\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "203",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "203",
+                        "endOffsets": "304"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Muhammad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\1f4c6428d98da1406276aa0b0020a6b9\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "416",
+                        "endColumns": "100",
+                        "endOffsets": "512"
+                    }
+                }
+            ]
+        }
+    ]
+}
